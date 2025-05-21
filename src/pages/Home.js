@@ -15,6 +15,7 @@ import {
 import { useAuth } from '../contexts/AuthContext';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase';
+import LoadingScreen from '../components/LoadingScreen';
 
 const regions = [
   {
@@ -121,11 +122,27 @@ const Home = () => {
   const visitedCount = visitedParks.length;
   const progressPercentage = totalParks > 0 ? (visitedCount / totalParks) * 100 : 0;
 
+  if (loading) {
+    return (
+      <Container maxWidth="lg" sx={{ mt: 4 }}>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography variant="h3" component="h1" gutterBottom>
+            States of Adventure
+          </Typography>
+          <Typography variant="h6" color="text.secondary" paragraph>
+            Track your visits to state parks across the United States
+          </Typography>
+        </Box>
+        <LoadingScreen />
+      </Container>
+    );
+  }
+
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
       <Box sx={{ textAlign: 'center', mb: 6 }}>
         <Typography variant="h3" component="h1" gutterBottom>
-          State Parks Tracker
+          States of Adventure
         </Typography>
         <Typography variant="h6" color="text.secondary" paragraph>
           Track your visits to state parks across the United States
@@ -217,7 +234,7 @@ const Home = () => {
                             {state.description || placeholderDescription}
                           </Typography>
                         </Box>
-                        {currentUser && !loading && state.path && (
+                        {currentUser && state.path && (
                           <Box>
                             <Typography variant="body2" color="text.secondary">
                               Visited {visited} of {parks.length} parks

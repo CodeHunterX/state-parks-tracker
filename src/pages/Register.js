@@ -8,7 +8,8 @@ import {
   Button,
   Link,
   Box,
-  Alert
+  Alert,
+  Divider
 } from '@mui/material';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -97,6 +98,34 @@ const Register = () => {
               Login here
             </Link>
           </Typography>
+        </Box>
+
+        <Divider sx={{ my: 3 }} />
+        
+        <Box sx={{ mt: 2 }}>
+          <Typography variant="body2" color="text.secondary" align="center" gutterBottom>
+            By creating an account, you agree to our Terms of Service and Privacy Policy.
+          </Typography>
+          
+          <Typography variant="subtitle2" sx={{ mt: 2, mb: 1 }}>
+            We want you to know:
+          </Typography>
+          
+          <Box component="ul" sx={{ 
+            pl: 2, 
+            mb: 0,
+            '& li': {
+              typography: 'body2',
+              color: 'text.secondary',
+              mb: 0.5
+            }
+          }}>
+            <li>We do not sell your personal information.</li>
+            <li>We only collect what's necessary.</li>
+            <li>Your data stays secure.</li>
+            <li>You control your data.</li>
+            <li>Analytics are anonymized.</li>
+          </Box>
         </Box>
       </Paper>
     </Container>

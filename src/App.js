@@ -56,6 +56,8 @@ import Oregon from './pages/Oregon';
 import Utah from './pages/Utah';
 import Washington from './pages/Washington';
 import Wyoming from './pages/Wyoming';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 
 function App() {
   return (
@@ -64,6 +66,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route 
             path="/tennessee" 
             element={

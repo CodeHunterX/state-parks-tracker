@@ -18,6 +18,7 @@ import {
 import { collection, getDocs, query, where, doc, setDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useAuth } from '../contexts/AuthContext';
+import LoadingScreen from '../components/LoadingScreen';
 
 // Custom marker icons
 const createCustomIcon = (color) => {
@@ -86,110 +87,116 @@ const Alaska = () => {
         </Alert>
       )}
       
-      {/* Progress Bar */}
-      {currentUser && !loading && (
-        <Card sx={{ mb: 3 }}>
-          <CardContent>
-            <Typography variant="h6" gutterBottom>
-              Your Progress
-            </Typography>
-            <Typography variant="body2" gutterBottom>
-              Visited {parks.filter(park => visitedParks.includes(park.id)).length} out of {parks.length} parks
-            </Typography>
-            <LinearProgress
-              variant="determinate"
-              value={progress}
-              sx={{ height: 10, borderRadius: 5 }}
-            />
-            <Typography variant="body2" sx={{ mt: 1 }}>
-              {Math.round(progress)}% Complete
-            </Typography>
-          </CardContent>
-        </Card>
-      )}
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          {/* Progress Bar */}
+          {currentUser && (
+            <Card sx={{ mb: 3 }}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Your Progress
+                </Typography>
+                <Typography variant="body2" gutterBottom>
+                  Visited {parks.filter(park => visitedParks.includes(park.id)).length} out of {parks.length} parks
+                </Typography>
+                <LinearProgress
+                  variant="determinate"
+                  value={progress}
+                  sx={{ height: 10, borderRadius: 5 }}
+                />
+                <Typography variant="body2" sx={{ mt: 1 }}>
+                  {Math.round(progress)}% Complete
+                </Typography>
+              </CardContent>
+            </Card>
+          )}
 
-      {/* Map */}
-      <Card sx={{ mb: 3 }}>
-        <CardContent>
-          <Typography variant="h6" gutterBottom>
-            Park Locations
-          </Typography>
-          <Box sx={{ height: 400 }}>
-            <MapContainer
-              center={[64.8561, -147.3528]}
-              zoom={5}
-              style={{ height: '100%', width: '100%' }}
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              {parks.map((park) => (
-                <Marker
-                  key={park.id}
-                  position={[park.latitude, park.longitude]}
-                  icon={createCustomIcon(visitedParks.includes(park.id) ? '#2196f3' : '#f44336')}
-                >
-                  <Popup>
-                    <Typography variant="subtitle1">{park.name}</Typography>
-                    <Typography variant="body2">{park.location}</Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {park.description}
-                    </Typography>
-                  </Popup>
-                </Marker>
-              ))}
-            </MapContainer>
-          </Box>
-        </CardContent>
-      </Card>
-
-      {/* Parks List */}
-      <Typography variant="h4" gutterBottom>
-        Alaska State Parks
-      </Typography>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-        {parks.map((park) => (
-          <Paper 
-            key={park.id}
-            elevation={2}
-            sx={{
-              p: 2,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              gap: 2
-            }}
-          >
-            <Box sx={{ flex: 1 }}>
+          {/* Map */}
+          <Card sx={{ mb: 3 }}>
+            <CardContent>
               <Typography variant="h6" gutterBottom>
-                {park.name}
+                Park Locations
               </Typography>
-              <Typography variant="body2" color="text.secondary" gutterBottom>
-                {park.description}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Location: {park.location}
-              </Typography>
-            </Box>
-            {currentUser ? (
-              <Button
-                variant="contained"
-                color={visitedParks.includes(park.id) ? "success" : "primary"}
-                onClick={() => handleMarkVisited(park.id)}
-                disabled={visitedParks.includes(park.id)}
-                sx={{ minWidth: 150 }}
+              <Box sx={{ height: 400 }}>
+                <MapContainer
+                  center={[64.8561, -147.3528]}
+                  zoom={5}
+                  style={{ height: '100%', width: '100%' }}
+                >
+                  <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  />
+                  {parks.map((park) => (
+                    <Marker
+                      key={park.id}
+                      position={[park.latitude, park.longitude]}
+                      icon={createCustomIcon(visitedParks.includes(park.id) ? '#2196f3' : '#f44336')}
+                    >
+                      <Popup>
+                        <Typography variant="subtitle1">{park.name}</Typography>
+                        <Typography variant="body2">{park.location}</Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {park.description}
+                        </Typography>
+                      </Popup>
+                    </Marker>
+                  ))}
+                </MapContainer>
+              </Box>
+            </CardContent>
+          </Card>
+
+          {/* Parks List */}
+          <Typography variant="h4" gutterBottom>
+            Alaska State Parks
+          </Typography>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+            {parks.map((park) => (
+              <Paper 
+                key={park.id}
+                elevation={2}
+                sx={{
+                  p: 2,
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  gap: 2
+                }}
               >
-                {visitedParks.includes(park.id) ? '✓ Visited' : 'Mark as Visited'}
-              </Button>
-            ) : (
-              <Typography variant="body2" color="text.secondary">
-                Login to track your visits
-              </Typography>
-            )}
-          </Paper>
-        ))}
-      </Box>
+                <Box sx={{ flex: 1 }}>
+                  <Typography variant="h6" gutterBottom>
+                    {park.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" gutterBottom>
+                    {park.description}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    Location: {park.location}
+                  </Typography>
+                </Box>
+                {currentUser ? (
+                  <Button
+                    variant="contained"
+                    color={visitedParks.includes(park.id) ? "success" : "primary"}
+                    onClick={() => handleMarkVisited(park.id)}
+                    disabled={visitedParks.includes(park.id)}
+                    sx={{ minWidth: 150 }}
+                  >
+                    {visitedParks.includes(park.id) ? '✓ Visited' : 'Mark as Visited'}
+                  </Button>
+                ) : (
+                  <Typography variant="body2" color="text.secondary">
+                    Login to track your visits
+                  </Typography>
+                )}
+              </Paper>
+            ))}
+          </Box>
+        </>
+      )}
     </Container>
   );
 };
