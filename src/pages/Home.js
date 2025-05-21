@@ -22,33 +22,33 @@ const regions = [
     name: 'Northeast',
     states: [
       { name: 'Connecticut', stateKey: 'connecticut', image: '/images/connecticut-poster.png', description: 'Explore Connecticut\'s coastal parks and historic sites', path: '/connecticut' },
-      { name: 'Delaware', stateKey: 'delaware', image: '/images/delaware-poster.png', description: 'Explore Delaware\'s coastal parks and historic sites', path: '/delaware' },
-      { name: 'Maine', stateKey: 'maine', image: '/images/maine-poster.png', description: 'Explore Maine\'s coastal parks and historic sites', path: '/maine' },
-      { name: 'Maryland', stateKey: 'maryland', image: '/images/maryland-poster.png', description: 'Discover Maryland\'s Chesapeake parks and forests', path: '/maryland' },
-      { name: 'Massachusetts', stateKey: 'massachusetts', image: '/images/massachusetts-poster.png', description: 'Explore Massachusetts\'s coastal parks and historic sites', path: '/massachusetts' },
-      { name: 'New Hampshire', stateKey: 'new_hampshire', image: '/images/new-hampshire-poster.png', description: 'Explore New Hampshire\'s coastal parks and historic sites', path: '/new-hampshire' },
-      { name: 'New Jersey', stateKey: 'new jersey', image: '/images/new-jersey-poster.png', description: 'Explore New Jersey\'s coastal parks and historic sites', path: '/new-jersey' },
-      { name: 'New York', stateKey: 'new_york', image: '/images/new-york-poster.png', description: 'Explore New York\'s coastal parks and historic sites', path: '/new-york' },
-      { name: 'Pennsylvania', stateKey: 'pennsylvania', image: '/images/pennsylvania-poster.png', description: 'Explore Pennsylvania\'s coastal parks and historic sites', path: '/pennsylvania' },
-      { name: 'Rhode Island', stateKey: 'rhode_island', image: '/images/rhode-island-poster.png', description: 'Explore Rhode Island\'s coastal parks and historic sites', path: '/rhode-island' },
-      { name: 'Vermont', stateKey: 'vermont', image: '/images/vermont-poster.png', description: 'Explore Vermont\'s coastal parks and historic sites', path: '/vermont' },
+      { name: 'Delaware', stateKey: 'delaware', image: '/images/delaware-poster.png', description: 'Relax in Delaware\'s serene beaches and lush woodlands.', path: '/delaware' },
+      { name: 'Maine', stateKey: 'maine', image: '/images/maine-poster.png', description: 'Explore Maine\'s rugged coastlines and dense forests.', path: '/maine' },
+      { name: 'Maryland', stateKey: 'maryland', image: '/images/maryland-poster.png', description: 'Enjoy Maryland\'s Chesapeake Bay views and mountain parks.', path: '/maryland' },
+      { name: 'Massachusetts', stateKey: 'massachusetts', image: '/images/massachusetts-poster.png', description: 'Explore Massachusetts\'s historic sites and coastal beauty.', path: '/massachusetts' },
+      { name: 'New Hampshire', stateKey: 'new_hampshire', image: '/images/new-hampshire-poster.png', description: 'Hike New Hampshire\'s White Mountains and scenic lakes.', path: '/new-hampshire' },
+      { name: 'New Jersey', stateKey: 'new jersey', image: '/images/new-jersey-poster.png', description: 'Enjoy New Jersey\'s coastal parks and pine barrens.', path: '/new-jersey' },
+      { name: 'New York', stateKey: 'new_york', image: '/images/new-york-poster.png', description: 'Explore New York\'s Adirondack peaks and Finger Lakes.', path: '/new-york' },
+      { name: 'Pennsylvania', stateKey: 'pennsylvania', image: '/images/pennsylvania-poster.png', description: 'Explore Pennsylvania\'s woodlands and historic sites.', path: '/pennsylvania' },
+      { name: 'Rhode Island', stateKey: 'rhode_island', image: '/images/rhode-island-poster.png', description: 'Relax in Rhode Island\'s coastal parks and beaches.', path: '/rhode-island' },
+      { name: 'Vermont', stateKey: 'vermont', image: '/images/vermont-poster.png', description: 'Enjoy Vermont\'s Green Mountains and serene lakes.', path: '/vermont' },
       ]
   },
   {
     name: 'Midwest',
     states: [
-      { name: 'Illinois', stateKey: 'illinois', image: '/images/illinois-poster.png', description: 'Explore Illinois\'s coastal parks and historic sites', path: '/illinois' },
-      { name: 'Indiana', stateKey: 'indiana', image: '/images/indiana-poster.png', description: 'Explore Indiana\'s coastal parks and historic sites', path: '/indiana' },
-      { name: 'Iowa', stateKey: 'iowa', image: '/images/iowa-poster.png', description: 'Explore Iowa\'s coastal parks and historic sites', path: '/iowa' },
-      { name: 'Kansas', stateKey: 'kansas', image: '/images/kansas-poster.png', description: 'Explore Kansas\'s coastal parks and historic sites', path: '/kansas' },
-      { name: 'Michigan', stateKey: 'michigan', image: '/images/michigan-poster.png', description: 'Explore Michigan\'s coastal parks and historic sites', path: '/michigan' },
-      { name: 'Minnesota', stateKey: 'minnesota', image: '/images/minnesota-poster.png', description: 'Explore Minnesota\'s coastal parks and historic sites', path: '/minnesota' },
-      { name: 'Missouri', stateKey: 'missouri', image: '/images/missouri-poster.png', description: 'Explore Missouri\'s coastal parks and historic sites', path: '/missouri' },
-      { name: 'Nebraska', stateKey: 'nebraska', image: '/images/nebraska-poster.png', description: 'Explore Nebraska\'s coastal parks and historic sites', path: '/nebraska' },
-      { name: 'North Dakota', stateKey: 'northdakota', image: '/images/north-dakota-poster.png', description: 'Explore North Dakota\'s coastal parks and historic sites', path: '/north-dakota' },
-      { name: 'Ohio', stateKey: 'ohio', image: '/images/ohio-poster.png', description: 'Explore Ohio\'s coastal parks and historic sites', path: '/ohio' },
-      { name: 'South Dakota', stateKey: 'southdakota', image: '/images/south-dakota-poster.png', description: 'Explore South Dakota\'s coastal parks and historic sites', path: '/south-dakota' },
-      { name: 'Wisconsin', stateKey: 'wisconsin', image: '/images/wisconsin-poster.png', description: 'Explore Wisconsin\'s coastal parks and historic sites', path: '/wisconsin' }
+      { name: 'Illinois', stateKey: 'illinois', image: '/images/illinois-poster.png', description: 'Enjoy Illinois\'s river valleys and historic prairies.', path: '/illinois' },
+      { name: 'Indiana', stateKey: 'indiana', image: '/images/indiana-poster.png', description: 'Explore Indiana\'s rolling hills and serene forests.', path: '/indiana' },
+      { name: 'Iowa', stateKey: 'iowa', image: '/images/iowa-poster.png', description: 'Explore Iowa\'s gentle landscapes and winding rivers.', path: '/iowa' },
+      { name: 'Kansas', stateKey: 'kansas', image: '/images/kansas-poster.png', description: 'Discover Kansas\'s expansive plains and prairie trails.', path: '/kansas' },
+      { name: 'Michigan', stateKey: 'michigan', image: '/images/michigan-poster.png', description: 'Discover Michigan\'s Great Lakes shores and forested trails.', path: '/michigan' },
+      { name: 'Minnesota', stateKey: 'minnesota', image: '/images/minnesota-poster.png', description: 'Adventure through Minnesota\'s lakes and northern woods.', path: '/minnesota' },
+      { name: 'Missouri', stateKey: 'missouri', image: '/images/missouri-poster.png', description: 'Experience Missouri\'s Ozark mountains and clear streams.', path: '/missouri' },
+      { name: 'Nebraska', stateKey: 'nebraska', image: '/images/nebraska-poster.png', description: 'Discover Nebraska\'s sandhills and river valleys.', path: '/nebraska' },
+      { name: 'North Dakota', stateKey: 'northdakota', image: '/images/north-dakota-poster.png', description: 'Traverse North Dakota\'s badlands and prairie landscapes.', path: '/north-dakota' },
+      { name: 'Ohio', stateKey: 'ohio', image: '/images/ohio-poster.png', description: 'Explore Ohio\'s rolling hills and lakefront parks.', path: '/ohio' },
+      { name: 'South Dakota', stateKey: 'southdakota', image: '/images/south-dakota-poster.png', description: 'Experience South Dakota\'s prairies and granite peaks.', path: '/south-dakota' },
+      { name: 'Wisconsin', stateKey: 'wisconsin', image: '/images/wisconsin-poster.png', description: 'Explore Wisconsin\'s rolling hills and lakefront parks.', path: '/wisconsin' }
     ]
   },
   {
@@ -73,19 +73,19 @@ const regions = [
   {
     name: 'West',
     states: [
-      { name: 'Alaska', stateKey: 'alaska', image: '/images/alaska-poster.png', description: 'Explore Alaska\'s coastal parks and historic sites', path: '/alaska' },
-      { name: 'Arizona', stateKey: 'arizona', image: '/images/arizona-poster.png', description: 'Explore Arizona\'s coastal parks and historic sites', path: '/arizona' },
-      { name: 'California', stateKey: 'california', image: '/images/california-poster.png', description: 'Explore California\'s coastal parks and historic sites', path: '/california' },
-      { name: 'Colorado', stateKey: 'colorado', image: '/images/colorado-poster.png', description: 'Explore Colorado\'s coastal parks and historic sites', path: '/colorado' },
-      { name: 'Hawaii', stateKey: 'hawaii', image: '/images/hawaii-poster.png', description: 'Explore Hawaii\'s coastal parks and historic sites', path: '/hawaii' },
-      { name: 'Idaho', stateKey: 'idaho', image: '/images/idaho-poster.png', description: 'Explore Idaho\'s coastal parks and historic sites', path: '/idaho' },
-      { name: 'Montana', stateKey: 'montana', image: '/images/montana-poster.png', description: 'Explore Montana\'s coastal parks and historic sites', path: '/montana' },
-      { name: 'Nevada', stateKey: 'nevada', image: '/images/nevada-poster.png', description: 'Explore Nevada\'s coastal parks and historic sites', path: '/nevada' },
-      { name: 'New Mexico', stateKey: 'new mexico', image: '/images/new-mexico-poster.png', description: 'Explore New Mexico\'s coastal parks and historic sites', path: '/new-mexico' },
-      { name: 'Oregon', stateKey: 'oregon', image: '/images/oregon-poster.png', description: 'Explore Oregon\'s coastal parks and historic sites', path: '/oregon' },
-      { name: 'Utah', stateKey: 'utah', image: '/images/utah-poster.png', description: 'Explore Utah\'s coastal parks and historic sites', path: '/utah' },
-      { name: 'Washington', stateKey: 'washington', image: '/images/washington-poster.png', description: 'Explore Washington\'s coastal parks and historic sites', path: '/washington' },
-      { name: 'Wyoming', stateKey: 'wyoming', image: '/images/wyoming-poster.png', description: 'Explore Wyoming\'s coastal parks and historic sites', path: '/wyoming' }
+      { name: 'Alaska', stateKey: 'alaska', image: '/images/alaska-poster.png', description: 'Explore Alaska\'s vast wilderness and glacial landscapes.', path: '/alaska' },
+      { name: 'Arizona', stateKey: 'arizona', image: '/images/arizona-poster.png', description: 'Experience Arizona\'s desert beauty and red rock formations.', path: '/arizona' },
+      { name: 'California', stateKey: 'california', image: '/images/california-poster.png', description: 'Explore California\'s diverse parks from coastlines to mountains', path: '/california' },
+      { name: 'Colorado', stateKey: 'colorado', image: '/images/colorado-poster.png', description: 'Adventure through Colorado\'s alpine lakes and rugged peaks.', path: '/colorado' },
+      { name: 'Hawaii', stateKey: 'hawaii', image: '/images/hawaii-poster.png', description: 'Immerse in Hawaii\'s volcanic landscapes and ocean vistas.', path: '/hawaii' },
+      { name: 'Idaho', stateKey: 'idaho', image: '/images/idaho-poster.png', description: 'Traverse Idaho\'s rugged mountains and tranquil lakes.', path: '/idaho' },
+      { name: 'Montana', stateKey: 'montana', image: '/images/montana-poster.png', description: 'Explore Montana\'s big sky country and alpine terrains.', path: '/montana' },
+      { name: 'Nevada', stateKey: 'nevada', image: '/images/nevada-poster.png', description: 'Venture into Nevada\'s desert landscapes and mountain ranges.', path: '/nevada' },
+      { name: 'New Mexico', stateKey: 'new mexico', image: '/images/new-mexico-poster.png', description: 'Experience New Mexico\'s desert vistas and ancient ruins.', path: '/new-mexico' },
+      { name: 'Oregon', stateKey: 'oregon', image: '/images/oregon-poster.png', description: 'Adventure through Oregon\'s forests, mountains, and coastlines.', path: '/oregon' },
+      { name: 'Utah', stateKey: 'utah', image: '/images/utah-poster.png', description: 'Marvel at Utah\'s red rock formations and canyons.', path: '/utah' },
+      { name: 'Washington', stateKey: 'washington', image: '/images/washington-poster.png', description: 'Adventure through Washington\'s rainforests and coastal cliffs.', path: '/washington' },
+      { name: 'Wyoming', stateKey: 'wyoming', image: '/images/wyoming-poster.png', description: 'Experience Wyoming\'s rugged mountains and open plains.', path: '/wyoming' }
     ]
   }
 ];
