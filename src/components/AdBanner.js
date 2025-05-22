@@ -24,16 +24,18 @@ const AdBanner = () => {
         bgcolor: '#f5e7c6',
         color: '#5B4636',
         textAlign: 'center',
-        py: 1.5,
+        py: 0.5,
         zIndex: 1300,
-        boxShadow: '0 -2px 8px rgba(0,0,0,0.08)'
+        boxShadow: '0 -2px 8px rgba(0,0,0,0.08)',
+        maxHeight: 90,
+        minHeight: 60,
       }}
     >
       <ins
         className="adsbygoogle"
-        style={{ display: 'block', margin: '0 auto' }}
+        style={{ display: 'block', margin: '0 auto', height: 60, maxHeight: 90 }}
         data-ad-client="ca-pub-7600741050545857"
-        data-ad-slot="YOUR_SLOT_ID"
+        data-ad-slot="6439837100"
         data-ad-format="auto"
         data-full-width-responsive="true"
         ref={adRef}
