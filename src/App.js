@@ -58,6 +58,7 @@ import Washington from './pages/Washington';
 import Wyoming from './pages/Wyoming';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
+import AdBanner from './components/AdBanner';
 
 function App() {
   return (
@@ -471,6 +472,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
+        <AdBanner />
       </AuthProvider>
     </Router>
   );
