@@ -197,6 +197,7 @@ const Alaska = () => {
           </Box>
         </>
       )}
+      <Box sx={{ height: 90 }} />
     </Container>
   );
 };

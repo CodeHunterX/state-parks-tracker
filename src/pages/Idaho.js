@@ -190,6 +190,7 @@ const Idaho = () => {
           </Paper>
         ))}
       </Box>
+      <Box sx={{ height: 90 }} />
     </Container>
   );
 };

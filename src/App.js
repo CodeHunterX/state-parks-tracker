@@ -59,6 +59,7 @@ import Wyoming from './pages/Wyoming';
 import Terms from './pages/Terms';
 import Privacy from './pages/Privacy';
 import AdBanner from './components/AdBanner';
+import { Box } from '@mui/material';
 
 function App() {
   return (
@@ -472,6 +473,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
+        <Box sx={{ height: 90 }} />
         <AdBanner />
       </AuthProvider>
     </Router>

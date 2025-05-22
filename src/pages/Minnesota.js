@@ -190,6 +190,7 @@ const Minnesota = () => {
           </Paper>
         ))}
       </Box>
+      <Box sx={{ height: 90 }} />
     </Container>
   );
 };
