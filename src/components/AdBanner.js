@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 
 const AdBanner = () => {
   const adRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     if (window.adsbygoogle && adRef.current) {
@@ -13,6 +15,12 @@ const AdBanner = () => {
       }
     }
   }, []);
+
+  // Don't show ad on these pages
+  const excludedPaths = ['/login', '/register', '/terms', '/privacy'];
+  if (excludedPaths.includes(location.pathname)) {
+    return null;
+  }
 
   return (
     <Box
