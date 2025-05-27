@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import { Box } from '@mui/material';
 import { useLocation } from 'react-router-dom';
+import { useLoading } from '../contexts/LoadingContext';
 
 const AdBanner = () => {
   const adRef = useRef(null);
   const location = useLocation();
+  const { isLoading } = useLoading();
 
   useEffect(() => {
     if (window.adsbygoogle && adRef.current) {
@@ -16,9 +18,9 @@ const AdBanner = () => {
     }
   }, []);
 
-  // Don't show ad on these pages
+  // Don't show ad on these pages or while loading
   const excludedPaths = ['/login', '/register', '/terms', '/privacy'];
-  if (excludedPaths.includes(location.pathname)) {
+  if (excludedPaths.includes(location.pathname) || isLoading) {
     return null;
   }
 

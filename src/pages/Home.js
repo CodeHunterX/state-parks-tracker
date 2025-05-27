@@ -16,6 +16,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import LoadingScreen from '../components/LoadingScreen';
+import { useLoading } from '../contexts/LoadingContext';
 
 const regions = [
   {
@@ -97,32 +98,38 @@ const Home = () => {
   const navigate = useNavigate();
   const { currentUser, visitedParks } = useAuth();
   const [parksByState, setParksByState] = useState({});
-  const [loading, setLoading] = useState(true);
   const [totalParks, setTotalParks] = useState(0);
+  const { isLoading, setIsLoading } = useLoading();
 
   useEffect(() => {
     async function fetchParks() {
-      const result = {};
-      let total = 0;
-      for (const region of regions) {
-        for (const state of region.states) {
-          const q = query(collection(db, 'parks'), where('state', '==', state.stateKey));
-          const snapshot = await getDocs(q);
-          result[state.stateKey] = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-          total += snapshot.docs.length;
+      setIsLoading(true);
+      try {
+        const result = {};
+        let total = 0;
+        for (const region of regions) {
+          for (const state of region.states) {
+            const q = query(collection(db, 'parks'), where('state', '==', state.stateKey));
+            const snapshot = await getDocs(q);
+            result[state.stateKey] = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            total += snapshot.docs.length;
+          }
         }
+        setParksByState(result);
+        setTotalParks(total);
+      } catch (error) {
+        console.error('Error fetching parks:', error);
+      } finally {
+        setIsLoading(false);
       }
-      setParksByState(result);
-      setTotalParks(total);
-      setLoading(false);
     }
     fetchParks();
-  }, []);
+  }, [setIsLoading]);
 
   const visitedCount = visitedParks.length;
   const progressPercentage = totalParks > 0 ? (visitedCount / totalParks) * 100 : 0;
 
-  if (loading) {
+  if (isLoading) {
     return (
       <Container maxWidth="lg" sx={{ mt: 4 }}>
         <Box sx={{ textAlign: 'center', mb: 6 }}>
