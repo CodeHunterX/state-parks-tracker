@@ -476,7 +476,6 @@ function AppContent() {
         <Route path="/register" element={<Register />} />
       </Routes>
       <Box sx={{ height: 90 }} />
-      <AdBanner />
     </>
   );
 }
